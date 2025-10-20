@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-backdrop text-white font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-center-glow {
+    background: radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.06), transparent 60%);
+  }
+
+  .bg-grid-mask {
+    background-image: linear-gradient(transparent, transparent 31px, theme('colors.gridline') 31px),
+      linear-gradient(90deg, transparent, transparent 31px, theme('colors.gridline') 31px);
+    background-size: 32px 32px;
+    -webkit-mask-image: radial-gradient(circle at 50% 30%, black 60%, transparent 85%);
+    mask-image: radial-gradient(circle at 50% 30%, black 60%, transparent 85%);
+  }
+}
